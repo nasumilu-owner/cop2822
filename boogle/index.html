@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <link rel="stylesheet" href="./css/boggle2.css">
+        <link rel="stylesheet" href="./css/timer.css">
+        <script src="https://kit.fontawesome.com/8bbb68db09.js" crossorigin="anonymous"></script>
+        <script type="module" src="./js/createGame.js"></script>
+        <title>Boggle</title>
+    </head>
+    <body>
+        <div id="boggle">
+            <div id="boggle-title">
+                <h2><i class="fas fa-chess-king"></i> &nbsp;Boggle</h2>
+                <div id="boggle-setting">
+                    <h3><i class="fas fa-cog"></i></h3>
+                    <div id="setting">
+                        <h4>Settings</h4>
+                        <fieldset>
+                            <legend>Letter Provider and Dictionary</legend>
+                            <label for="dictionary">Dictionary Service</label>
+                            <select id="dictionary">
+                                <option value="google" selected="selected">Unoffical Googe Dictionary</options>
+                                <option value="webster">Merriam-Webster</options>
+                            </select>
+                            <br>
+                            <label for="letterProvider">Letter Provider</label>
+                            <select id="letterProvider">
+                                <option value="static" selected="selected">Static Letter Provider</option>
+                                <option value="random">Random Letter Provider</option>
+                            </select>
+                        </fieldset>
+                        <fieldset>
+                            <legend>Game Timer</legend>
+                            <label for="timeFormat">Time Format</label>
+                            <select id="timeFormat">
+                                <option value="numerical" selected="selected">Numerical</option>
+                                <option value="lexical">Lexical</option>
+                                <option value="lexical_compact">Lexical Compact</option>
+                            </select>
+                            <br>
+                            <label for="timeLimit">Time Limit</label>
+                            <input id="timeLimit" type="number" min=0 max=5096 value=60>
+                        </fieldset>
+                        <div style="text-align: center;">
+                            <button id="apply-btn">Apply</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div id="boggle-board">
+                <div>
+                    Your letters are: <span id="letters"></span>
+                    <div id="timer">
+                        <i class="fas fa-stopwatch"></i>
+                        <span class="timer">00:00</span>
+                    </div>
+                </div>
+                <div>
+                    <ul id="words"></ul>
+                </div>
+                <div id="status">
+                    Score: <span id="score">0</span>
+                </div>
+                <form id="boggle-words">
+                    <input id="boggle-word" type="text" disabled="disabled">
+                    <input id="boggle-submit" type="submit" value="Add Word" disabled="disabled">
+                    <div id="message"></div>
+                </form>
+            </div>
+            <div id="boogle-control">
+                <button id="play-btn" data-action="play">Play</button>
+                <button id="quit-btn" data-action="quit" disabled="disabled" style="cursor: not-allowed;">Quit</button>
+            </div>
+        </div>
+    </body>
+</html>

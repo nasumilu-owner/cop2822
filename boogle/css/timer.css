@@ -1,0 +1,10 @@
+@font-face {
+    font-family: "led";
+    src: url("./../fonts/led.ttf") format("truetype");
+}
+
+.timer {
+    padding: 0.5em;
+    font-family: led, Arial, Helvetica, sans-serif;
+    color: #333;
+}
